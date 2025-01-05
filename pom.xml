@@ -18,8 +18,8 @@
 		<modelmapper.version>3.0.0</modelmapper.version>
 		<jjwt.version>0.12.5</jjwt.version>
 		<jacoco.version>0.8.12</jacoco.version>
-		<sonar.organization>cleysonph</sonar.organization>
-		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<sonar.organization>duda-ferreira</sonar.organization>
+  		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<sonar.coverage.exclusions>**/TwjobsApplication.*,**/config/**</sonar.coverage.exclusions>
 	</properties>
 	<dependencies>

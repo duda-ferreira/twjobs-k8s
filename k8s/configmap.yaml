@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: twjobs-configmap
+  labels:
+    app: twjobs
+data:
+  SPRING_PROFILE: prod
+  DB_HOST: "{{ DB_HOST }}"
+  DB_PORT: "{{ DB_PORT }}"
+  DB_NAME: "{{ DB_NAME }}"
+  DB_USER: "{{ DB_USER }}"  
+  DB_PASSWORD: "{{ DB_PASSWORD }}"
+  JWT_ACCESS_SECRET: "{{ JWT_ACCESS_SECRET }}"
+  JWT_ACCESS_EXPIRES_IN: "{{ JWT_ACCESS_EXPIRES_IN }}"
+  JWT_REFRESH_SECRET: "{{ JWT_REFRESH_SECRET }}"
+  JWT_REFRESH_EXPIRES_IN: "{{ JWT_REFRESH_EXPIRES_IN }}"

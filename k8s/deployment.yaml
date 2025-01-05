@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: twjobs-deployment
+  labels:
+    app: twjobs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: twjobs
+  template:
+    metadata:
+      labels:
+        app: twjobs
+    spec:
+      containers:
+      - name: twjobs
+        image: dudaferreira/twjobs:latest
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: twjobs-configmap
+        startupProbe:
+          httpGet:
+            path: /api/ping
+            port: 8080
+          periodSeconds: 2
+          failureThreshold: 30
+        readinessProbe:
+          httpGet:
+            path: /api/ping
+            port: 8080
+          periodSeconds: 5
+          failureThreshold: 3
+        livenessProbe:
+          httpGet:
+            path: /api/ping
+            port: 8080
+          periodSeconds: 5
+          failureThreshold: 3
